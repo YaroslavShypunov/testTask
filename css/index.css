@@ -1,0 +1,1085 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    text-decoration: none;
+    color: hotpink;
+}
+
+#menuBtn {
+    position: fixed;
+    z-index: 1200;
+    top: 25px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+#menuBtn path {
+    stroke: white;
+}
+
+.hr-carousel {
+    border-top: 1px solid white;
+    margin: 0;
+    width: 65%;
+    transition: border-color 0.5s ease;
+    animation-name: hr-carousel;
+    animation-duration: 2s;
+}
+
+#secondSlide .hr-carousel{
+    border-color: hotpink;
+}
+
+@keyframes hr-carousel {
+    0% {
+        width: 0
+    }
+    100% {
+        width: 65%
+    }
+}
+
+#navbarArrowContainer {
+    padding-top: 15px;
+    position: relative;
+}
+
+.keune-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    animation-name: keune-button-container;
+    animation-duration: 2s;
+}
+
+@keyframes keune-button-container {
+    0% {
+        width: 0
+    }
+    100% {
+        width: 50%
+    }
+}
+
+.keune-button {
+    border: 1px solid white;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 60px;
+    visibility: visible;
+    animation-name: keune-button;
+}
+#secondSlide .keune-button{
+    border-color: hotpink;
+}
+@keyframes keune-button {
+    0% {
+        visibility: hidden
+    }
+    25% {
+        visibility: hidden
+    }
+    100% {
+        visibility: visible
+    }
+}
+
+#carouselArrowsContainer {
+    position: absolute;
+    width: 50px;
+    bottom: 120px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#carouselIndicatorsOl {
+    border-bottom: 1px solid rgba(256, 256, 256, 0.6);
+    padding-bottom: 15px;
+    width: 25%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    bottom: 70px;
+
+}
+
+#carouselPrev, #carouselNext {
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+#carouselPrev:hover .arrow-left:after {
+    background: hotpink;
+}
+
+#carouselPrev:hover .arrow-left:before {
+    background: hotpink;
+}
+
+#carouselNext:hover .arrow-right:after {
+    background: hotpink;
+}
+
+#carouselNext:hover .arrow-right:before {
+    background: hotpink;
+}
+
+.carousel-indicators .slide-buttons {
+    height: 13px;
+    width: 13px;
+    border-radius: 60px;
+    background: none;
+    border: 1px solid white;
+}
+
+.counter-container {
+    position: relative;
+    font-size: 125px;
+}
+
+.counter-container span:nth-of-type(1) {
+    z-index: 1000;
+}
+
+.slide-container {
+    position: absolute;
+    bottom: 25%;
+    left: 10%;
+    color: white;
+    transition: color 0.5s ease;
+}
+#secondSlide .slide-container{
+    color: hotpink;
+}
+
+#carouselIndicators, #carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    font-size: 45px;
+}
+
+.slide-keune {
+    font-size: 20px;
+}
+
+.line {
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background: white;
+    transform: rotate(-45deg);
+    transform-origin: 195px 100px;
+}
+#secondSlide .line{
+    background: hotpink;
+}
+
+.slide-container .line {
+    animation-name: line;
+    animation-duration: 2s;
+}
+
+@keyframes line {
+    0% {
+        width: 0
+    }
+    100% {
+        width: 50%
+    }
+}
+
+#navbarAndSN {
+    display: flex;
+}
+
+path {
+    fill: white;
+    transition: all 0.5s ease;
+}
+
+#facebook {
+    grid-area: facebook;
+}
+
+#twitter {
+    grid-area: twitter;
+}
+
+#youtube {
+    grid-area: youtube;
+}
+
+#instagram {
+    grid-area: instagram;
+}
+
+#socialNetworkContainer .social-networks {
+    position: relative;
+}
+
+#socialNetworkContainer .social-networks:hover path {
+    fill: hotpink;
+    transition: fill 0.5s ease;
+}
+
+#socialNetworkContainer svg {
+    position: absolute;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#products:hover #openedMenu {
+    display: flex;
+}
+
+.navbarBackground {
+    background: #1b1b1b;
+}
+
+#socialNetworkContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 30px);
+    grid-template-rows: repeat(3, 10px);
+    grid-template-areas: 'facebook facebook' 'twitter youtube' 'instagram instagram';
+}
+
+header {
+    grid-area: header;
+}
+
+#menu li {
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    transition: color 0.5s ease;
+}
+
+#openedMenu {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background: white;
+    left: 0;
+    top: 80px;
+    color: #1b1b1b !important;
+    display: none;
+    justify-content: space-around;
+    border: 19px solid #1b1b1b;
+    border-top: none;
+}
+
+.submenu {
+    width: 200px;
+    padding: 30px 0;
+}
+
+#menu .submenu li {
+    padding: 20px 0;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+#menu .submenu li a {
+    color: #1b1b1b;
+}
+
+#menu .submenu .submenu-title {
+    font-size: 18px;
+    color: hotpink;
+}
+
+#groundNavbar {
+    color: white;
+    z-index: 1111;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-content: center;
+    padding: 10px 20px;
+    transition: color 0.5s ease;
+}
+
+.arrow {
+    width: 20px;
+    height: 5px;
+    left: 20%;
+    bottom: 6px;
+    position: absolute;
+}
+
+.arrow:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 65%;
+    height: 9px;
+    width: 1.5px;
+    background: white;
+    transition: background 0.5s ease;
+}
+
+.arrow:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 9px;
+    width: 1.5px;
+    background: white;
+    transition: background 0.5s ease;
+}
+#secondSlide .arrow:before{
+    background: hotpink;
+}
+#secondSlide .arrow:after{
+    background: hotpink;
+}
+.arrow-bottom:before {
+    transform: rotate(-52deg);
+}
+
+.arrow-bottom:after {
+    transform: rotate(52deg);
+    transform-origin: 1px 5px;
+}
+
+.arrow-left:before {
+    height: 20px;
+    transform: rotate(-130deg);
+}
+
+.arrow-left:after {
+    height: 20px;
+    transform: rotate(130deg);
+    transform-origin: -5.3px 14.8px;
+}
+
+.arrow-right:before {
+    height: 20px;
+    transform: rotate(-52deg);
+}
+
+.arrow-right:after {
+    height: 20px;
+    transform: rotate(52deg);
+    transform-origin: -14.8px 10.7px;
+}
+
+.arrow-keune-button:before {
+    height: 10px;
+    transform: rotate(-52deg);
+    width: 1px;
+    transform-origin: 0 7px
+}
+
+.arrow-keune-button:after {
+    height: 10px;
+    transform: rotate(52deg);
+    width: 1px;
+    transform-origin: -9px 2px;
+}
+
+.arrow-keune-button {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+}
+
+.arrow-left, .arrow-right {
+    top: 0;
+}
+
+#logoContainer {
+    width: 17vw;
+    height: 9vh;
+}
+
+#firstSlide {
+    background: url("../assets/slide1-big.jpg") top no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#secondSlide {
+    background: url("../assets/slide2-big.jpg") top no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.marki-keune-container > div:nth-of-type(1) {
+    grid-area: counterDiv;
+}
+
+.marki-keune-container > div:nth-of-type(2) {
+    grid-area: markiKeune;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 100;
+}
+
+.marki-keune-container {
+    height: 100%;
+    display: grid;
+    color: #1b1b1b;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: repeat(5, 20%);
+    grid-template-areas: '. . . . .' '. counterDiv counterDiv . .' '. . markiKeune markiKeune .' '. . . . .';
+}
+
+.marki-keune-container .line {
+    width: 210px;
+    background: #1b1b1b;
+}
+
+#container > section {
+    position: relative;
+}
+
+#container > section:nth-of-type(1) {
+    grid-area: firstSection;
+}
+
+#container > section:nth-of-type(2) {
+    grid-area: secondSection;
+    background: url("../assets/01_care.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(2):hover {
+    background: url("../assets/03_blend_1.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(3) {
+    grid-area: thirdSection;
+    background: url("../assets/02_design.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(3):hover {
+    background: url("../assets/05_so_pure.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(4) {
+    grid-area: forthSection;
+    background: url("../assets/03_blend_1.jpg") top no-repeat;
+    background-size: cover;
+}
+
+#container > section:nth-of-type(4):hover {
+    background: url("../assets/04_koloryzacja.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(5) {
+    grid-area: fifthSection;
+    background: url("../assets/04_koloryzacja.jpg") top no-repeat;
+    background-size: cover;
+}
+
+#container > section:nth-of-type(5):hover {
+    background: url("../assets/01_care.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container > section:nth-of-type(6) {
+    grid-area: sixthSection;
+    background: url("../assets/05_so_pure.jpg") top no-repeat;
+    background-size: cover;
+}
+
+#container > section:nth-of-type(6):hover {
+    background: url("../assets/02_design.jpg") top no-repeat;
+    background-size: cover;
+    transition: background 1s ease;
+}
+
+#container {
+    display: grid;
+    grid-gap: 0.5%;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: 60% repeat(3, 600px);
+    grid-template-areas: 'header header header' 'firstSection secondSection secondSection' 'thirdSection forthSection forthSection' 'fifthSection fifthSection sixthSection';
+}
+
+.large-keune-container {
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 30px;
+    line-height: 50px;
+}
+
+.large-keune-container .title-container {
+    font-size: 50px;
+}
+
+.large-keune-container .open-container {
+    width: 28vw;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.large-keune-container hr {
+    width: 15vw;
+    margin: 0;
+    border-top: 1px solid white;
+    transition: border-top 0.5s ease;
+}
+
+.large-keune-container .open-container .open-title {
+    font-size: 13px;
+}
+
+.large-keune-container .open-container div {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.small-keune-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+
+.small-keune-container .title-container {
+    font-size: 50px;
+}
+
+.small-keune-container .open-container {
+    width: 28vw;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.small-keune-container hr {
+    width: 15vw;
+    margin: 0;
+    border-top: 1px solid white;
+    transition: border-top 0.5s ease;
+}
+
+.small-keune-container .open-container .open-title {
+    font-size: 13px;
+}
+
+.small-keune-container .open-container div {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+#container > section:hover .title-container {
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+#carouselIndicatorsOl .active {
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    background: url(../assets/znak_keune.svg) no-repeat center;
+    background-size: 90%;
+    border: none;
+    width: 30px;
+    margin-top: -10px;
+    border-radius: unset;
+    height: 30px;
+}
+
+#carouselIndicatorsOl .active:after {
+    bottom: -30px;
+    border-bottom: 2px solid white;
+}
+
+.small-keune-container .open-container {
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.large-keune-container .open-container {
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.open-container:hover {
+    color: hotpink;
+}
+
+.open-container:hover .arrow:before {
+    background: hotpink;
+}
+
+.open-container:hover .arrow:after {
+    background: hotpink;
+}
+
+.open-container:hover hr {
+    border-top: 1px solid hotpink;
+}
+
+#menu li:hover {
+    color: hotpink;
+}
+
+#menu li:hover .arrow:before {
+    background: hotpink;
+}
+
+#menu li:hover .arrow:after {
+    background: hotpink;
+}
+
+.slide-container:hover .line {
+    background: hotpink;
+}
+
+#secondSlide .slide-container:hover .line {
+    background: white;
+}
+
+.slide-container:hover {
+    color: hotpink;
+}
+
+#secondSlide .slide-container:hover {
+    color: white;
+}
+
+.slide-container:hover .keune-button {
+    border-color: hotpink;
+}
+
+#secondSlide .slide-container:hover .keune-button {
+    border-color: white;
+}
+
+.slide-container:hover .hr-carousel {
+    border-color: hotpink;
+}
+#secondSlide .slide-container:hover .hr-carousel {
+    border-color: white;
+}
+
+#secondSlide .slide-container:hover {
+    border-color: white;
+}
+
+.slide-container:hover .arrow:before {
+    background: hotpink;
+}
+
+.slide-container:hover .arrow:after {
+    background: hotpink;
+}
+
+#secondSlide .slide-container:hover .arrow:before {
+    background: white;
+}
+
+#secondSlide .slide-container:hover .arrow:after {
+    background: white;
+}
+
+.showMenu {
+    display: flex !important;
+}
+
+#menu .submenu li:hover a {
+    color: hotpink;
+}
+.secondSlide{
+    color: hotpink;
+    transition: all 0.5s ease;
+}
+.secondSlide path{
+    transition: all 0.5s ease;
+    fill: hotpink;
+}
+.secondSlide:hover{
+    color: white;
+}
+.secondSlide:hover path{
+    fill: white !important;
+}
+.secondSlideArrow:before{
+    background: hotpink;
+}
+.secondSlideArrow:after{
+    background: hotpink;
+}
+#products:hover .secondSlide{
+    color: white;
+}
+#products:hover .secondSlideArrow:before{
+    background: white !important;
+}
+
+#products:hover .secondSlideArrow:after{
+    background: white !important;
+}
+
+#logoContainer:hover path{
+    fill: hotpink;
+}
+@media only screen and (max-width: 1200px) {
+    .small-keune-container {
+        padding: 20px 5px;
+    }
+
+    .large-keune-container {
+        padding: 30px 5px;
+    }
+
+    #menu li {
+        font-size: 14px;
+        padding: 20px 10px;
+    }
+
+    .marki-keune-container > div:nth-of-type(1) {
+        justify-self: end;
+    }
+
+    .marki-keune-container {
+        grid-template-columns: 3% 40% 14% 40% 3%;
+        grid-template-areas: '. . . . .' '.  counterDiv counterDiv . .' '. . markiKeune markiKeune .' '. .  . .';
+    }
+
+    #container {
+        grid-template-rows: 55% repeat(3, 450px);
+    }
+
+    .counter-container {
+        font-size: 100px;
+    }
+
+    .marki-keune-container > div:nth-of-type(2) {
+        font-size: 35px;
+        line-height: 35px;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .small-keune-container .title-container {
+        width: 30vw;
+        font-size: 30px;
+    }
+
+    .large-keune-container .title-container {
+        font-size: 30px;
+    }
+
+    .small-keune-container .open-container {
+        width: 30vw;
+    }
+
+    .large-keune-container .open-container {
+        width: 40vw;
+    }
+
+    .slide-container .content {
+        font-size: 35px;
+    }
+
+    .slide-container .line {
+        width: 45%;
+        transform-origin: 153px 70px;
+    }
+
+    @keyframes line {
+        0% {
+            width: 0
+        }
+        100% {
+            width: 45%
+        }
+    }
+    .arrow-left:before {
+        height: 15px;
+    }
+
+    .arrow-left:after {
+        height: 15px;
+        transform-origin: -3.8px 10.7px;
+    }
+
+    .arrow-right:before {
+        height: 15px;
+    }
+
+    .arrow-right:after {
+        height: 15px;
+        transform-origin: -10.55px 6.7px;
+    }
+
+    #carouselArrowsContainer {
+        height: 100px;
+    }
+
+    #menu li {
+        padding: 20px 5px;
+        font-size: 12px;
+    }
+
+    .keune-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .small-keune-container hr {
+        width: 8vw;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #navbarAndSN .arrow:before {
+        height: 6px;
+    }
+
+    #navbarAndSN .arrow-bottom:after {
+        transform-origin: 0px 1px;
+    }
+
+    #navbarAndSN .arrow:after {
+        height: 6px;
+    }
+
+    #logoContainer {
+        width: 39vw;
+        height: 15vh;
+    }
+
+    #container {
+        display: grid;
+        grid-gap: 0.5%;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 35% repeat(6, 450px);
+        grid-template-areas: 'header header header' 'firstSection firstSection firstSection' 'secondSection secondSection secondSection' 'thirdSection thirdSection thirdSection ' 'forthSection forthSection forthSection ' 'fifthSection fifthSection fifthSection ' 'sixthSection sixthSection sixthSection';
+    }
+
+    .small-keune-container {
+        color: white;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        line-height: 50px;
+        position: relative;
+        flex-direction: row;
+    }
+
+    .small-keune-container .open-container {
+        width: 40vw;
+    }
+
+    .small-keune-container hr {
+        width: 15vw;
+    }
+
+    #menu li {
+        padding: 20px 3px;
+        font-size: 11px;
+    }
+
+    #groundNavbar {
+        height: 100%;
+        background: #1b1b1b;
+        position: fixed;
+        overflow-y: auto;
+        display: none;
+    }
+
+    #navbarAndSN {
+        position: absolute;
+        display: block;
+        top: 85px;
+        right: 20px;
+        width: 100%;
+        text-align: right;
+    }
+
+    #menu li {
+        display: block;
+        padding: 20px 3px;
+        font-size: 25px;
+        text-align: end;
+    }
+
+    #socialNetworkContainer {
+        display: flex;
+        width: 100%;
+        height: 20px;
+        justify-content: flex-end;
+    }
+
+    #socialNetworkContainer .social-networks {
+        width: 40px;
+    }
+
+    #socialNetworkContainer svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    #navbarAndSN .arrow:before {
+        height: 16px;
+        transform-origin: -30px 7px;
+    }
+
+    #navbarAndSN .arrow-bottom:after {
+        height: 16px;
+        transform-origin: 27px -26px;
+    }
+
+    #menu li:hover {
+        color: hotpink;
+    }
+
+    #menu li:hover .arrow:before {
+        background: hotpink;
+    }
+
+    #menu li:hover .arrow:after {
+        background: hotpink;
+    }
+
+    #socialNetworkContainer .social-networks:hover path {
+        fill: hotpink;
+    }
+
+    #menuBtn {
+        display: block;
+    }
+
+    #navbarArrowContainer {
+        padding-top: 15px;
+        position: relative;
+        width: 50px;
+        right: 0;
+        float: right;
+        margin-right: 80px;
+    }
+
+    #openedMenu {
+        position: absolute;
+        width: 65%;
+        height: 500px;
+        left: 0;
+        top: 0;
+        margin: auto;
+        right: 100px;
+        background: none;
+        border: none;
+    }
+
+    #openedMenu div {
+        width: fit-content;
+        margin: auto;
+    }
+
+    #products:hover #openedMenu {
+        display: block;
+    }
+
+    #menu .submenu li a {
+        color: white;
+    }
+
+    #menu .submenu li {
+        padding: 5px 0;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .navbarBackground {
+        background: none;
+    }
+
+    #menu .submenu .submenu-title {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .large-keune-container .open-container {
+        width: 50vw;
+    }
+
+    .small-keune-container .open-container {
+        width: 50vw;
+    }
+
+    .large-keune-container hr {
+        width: 10vw;
+    }
+
+    .small-keune-container hr {
+        width: 10vw;
+    }
+
+    .large-keune-container .title-container {
+        font-size: 22px;
+    }
+
+    .small-keune-container .title-container {
+        font-size: 22px;
+    }
+}

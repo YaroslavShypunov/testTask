@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+<section id="mainContainer">
+    <div id="menuBtn" @click="showMenu">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <path d="M6.989,18.17L92.376,18.17" style="fill:none;stroke:white;stroke-width:1px;"/>
+            <g transform="matrix(1,0,0,1,0,31.8297)">
+        <path d="M6.989,18.17L92.376,18.17" style="fill:none;stroke:white;stroke-width:1px;"/>
+    </g>
+            <g transform="matrix(1,0,0,1,-1.11022e-16,65.2478)">
+        <path d="M6.989,18.17L92.376,18.17" style="fill:none;stroke:white;stroke-width:1px;"/>
+    </g>
+</svg>
+    </div>
+    <nav id="groundNavbar" class="animated fadeIn" :class="{ showMenu: show, navbarBackground: backgroundNavbar}">
+        <div id="logoContainer" :class="{secondSlide: secondSlide}">
+            <a href="#">
+            <svg width="100%" height="100%" viewBox="0 0 162 59" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                 style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path  d="M20.031,47.826L6.775,34.606L27.607,13.959L25.349,13.925L3.444,35.092L3.374,34.537L3.384,13.959L1.483,13.959L1.483,58.019L3.444,58.019L3.444,37.937L5.387,36.202L27.794,58.006L30.431,58.02L20.031,47.826ZM31.468,58.019L51.507,58.019L51.499,56.165L33.458,56.165L33.459,35.144L51.499,35.156L51.499,33.013L33.459,33.011L33.426,16.007L51.477,15.997L51.477,14.099L31.445,14.104L31.468,58.019ZM83.589,41.808C83.451,41.531 83.53,13.959 83.53,13.959L81.691,13.953L81.631,45.778C81.459,47.651 80.86,49.11 80.165,50.569C78.464,53.933 74.438,56.5 69.961,56.848C63.891,57.68 58.546,54.316 56.327,50.291C55.526,49.074 55.28,47.478 55.002,45.917L54.996,14.063C54.407,14.063 53.202,14.079 53.202,14.079C53.202,14.079 53.202,34.971 53.203,45.581C53.245,48.328 54.225,50.384 54.8,51.297C57.229,55.876 63.265,59.484 69.962,58.651C75.237,58.2 79.851,55.216 81.83,51.33C83.323,48.8 83.624,45.416 83.589,41.808M124.963,58.235L124.972,13.96L122.95,13.96L122.95,53.274C121.945,52.442 121.181,51.435 120.312,50.497L93.422,22.496L85.196,14.099L85.227,58.032L87.304,58.028L87.304,18.991L87.416,18.991L103.448,35.716L115.975,48.9L124.718,58.235L124.963,58.235ZM137.35,13.96L126.524,13.96L126.524,58.019L146.372,58.029L146.372,56.05L128.532,56.085L128.532,35.127L146.372,35.144L146.372,32.978L128.532,32.976L128.532,15.751L137.36,15.751L137.35,13.96ZM160.521,9.589C160.449,9.965 160.232,10.29 159.914,10.506C159.676,10.665 159.398,10.75 159.113,10.75C158.633,10.75 158.184,10.514 157.917,10.118C157.475,9.46 157.649,8.566 158.307,8.122C158.545,7.96 158.823,7.877 159.108,7.877C159.587,7.877 160.035,8.112 160.301,8.511C160.516,8.828 160.593,9.212 160.521,9.589M153.388,17.419C153.388,20.89 150.565,23.712 147.094,23.712C143.624,23.712 140.801,20.889 140.801,17.419C140.801,13.948 143.624,11.124 147.094,11.124C150.564,11.124 153.388,13.948 153.388,17.419M147.094,4.362C146.301,4.362 145.657,3.717 145.657,2.924C145.657,2.132 146.301,1.487 147.094,1.487C147.888,1.487 148.532,2.132 148.532,2.924C148.531,3.718 147.888,4.362 147.094,4.362M152.63,3.946C152.88,3.477 153.366,3.183 153.902,3.183C154.136,3.183 154.363,3.241 154.573,3.352C154.912,3.533 155.16,3.833 155.273,4.202C155.385,4.568 155.348,4.956 155.168,5.296C154.916,5.766 154.432,6.057 153.897,6.057C153.662,6.057 153.433,6.002 153.225,5.888C152.884,5.709 152.638,5.408 152.523,5.04C152.41,4.676 152.449,4.286 152.63,3.946M141.663,5.042C141.553,5.41 141.303,5.711 140.965,5.89C140.754,6.004 140.529,6.059 140.292,6.059C139.759,6.059 139.271,5.766 139.021,5.297C138.841,4.958 138.804,4.569 138.917,4.204C139.027,3.835 139.276,3.535 139.615,3.354C139.825,3.242 140.053,3.185 140.288,3.185C140.824,3.185 141.309,3.478 141.559,3.948C141.739,4.285 141.776,4.676 141.663,5.042M136.271,10.118C136.001,10.514 135.555,10.75 135.077,10.75C134.79,10.75 134.513,10.665 134.274,10.506C133.956,10.29 133.74,9.965 133.667,9.589C133.595,9.212 133.673,8.828 133.888,8.511C134.154,8.113 134.6,7.877 135.081,7.877C135.368,7.877 135.644,7.96 135.882,8.122C136.539,8.566 136.714,9.46 136.271,10.118M161.714,9.82C161.848,9.124 161.704,8.418 161.311,7.831C160.815,7.099 159.993,6.662 159.108,6.662C158.581,6.662 158.069,6.819 157.629,7.116C156.595,7.814 156.258,9.105 156.675,10.225L153.216,12.557C152.673,11.874 152.037,11.277 151.3,10.806L153.261,7.116C153.475,7.171 153.676,7.275 153.898,7.275L153.9,7.275C154.882,7.275 155.781,6.736 156.243,5.868C156.574,5.243 156.644,4.525 156.436,3.847C156.229,3.17 155.771,2.613 155.147,2.281C154.764,2.077 154.332,1.97 153.904,1.97C152.919,1.97 152.018,2.509 151.558,3.377C151.227,4.002 151.157,4.721 151.363,5.397C151.51,5.872 151.813,6.252 152.174,6.573L150.233,10.226C149.452,9.883 148.596,9.695 147.704,9.625L147.704,5.455C148.866,5.173 149.748,4.173 149.748,2.926C149.748,1.463 148.56,0.276 147.097,0.276C145.637,0.276 144.445,1.464 144.445,2.926C144.445,4.173 145.329,5.174 146.491,5.455L146.491,9.625C145.6,9.694 144.743,9.883 143.96,10.228L142.019,6.573C142.383,6.253 142.686,5.872 142.83,5.397C143.04,4.721 142.968,4.002 142.637,3.377C142.175,2.509 141.277,1.97 140.293,1.97C139.862,1.97 139.433,2.077 139.05,2.281C138.426,2.613 137.966,3.17 137.761,3.847C137.551,4.525 137.621,5.243 137.954,5.868C138.416,6.736 139.311,7.275 140.297,7.275C140.517,7.275 140.718,7.171 140.934,7.116L142.897,10.806C142.16,11.277 141.522,11.874 140.978,12.557L137.52,10.225C137.937,9.104 137.602,7.814 136.568,7.116C136.128,6.819 135.616,6.662 135.087,6.662C134.202,6.662 133.38,7.099 132.89,7.831C132.49,8.418 132.346,9.124 132.483,9.819C132.619,10.514 133.016,11.116 133.603,11.512C134.041,11.809 134.554,11.966 135.083,11.966C135.75,11.966 136.336,11.654 136.818,11.216L140.297,13.562C139.646,14.706 139.244,16.01 139.244,17.418C139.244,21.75 142.768,25.272 147.098,25.272C151.431,25.272 154.953,21.75 154.953,17.418C154.953,16.008 154.552,14.706 153.9,13.562L157.379,11.216C157.863,11.654 158.445,11.966 159.116,11.966C159.643,11.966 160.156,11.809 160.595,11.512C161.179,11.116 161.578,10.515 161.714,9.82"
+          style="fill-rule:nonzero;"/>
+</svg>
+            </a>
+        </div>
+        <div id="navbarAndSN">
+            <ul id="menu">
+                <li><a href="#" :class="{secondSlide: secondSlide}">Nowosci</a></li>
+                <li id="products" @mouseover="mouseOver" @mouseleave="mouseLeave"><span :class="{secondSlide: secondSlide}">Produkty</span> <br>
+                    <div id="navbarArrowContainer">
+                        <span class="arrow arrow-bottom animated pulse delay-2s infinite" :class="{secondSlideArrow: secondSlideArrow}"></span>
+                    </div>
+                    <div id="openedMenu" class="animated fadeIn ">
+                        <div>
+                            <ol class="submenu">
+                                <li class="submenu-title">Title</li>
+                                <li><a href="#">Drugi Produkt</a></li>
+                                <li><a href="#">Trzeci Produkt</a></li>
+                                <li><a href="#">Czwarty Produkt</a></li>
+                                <li><a href="#">Piąty Produkt</a></li>
+                                <li><a href="#">Szusty Produkt</a></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <ol class="submenu">
+                                <li class="submenu-title">Title</li>
+                                <li><a href="#">Drugi Produkt</a></li>
+                                <li><a href="#">Trzeci Produkt</a></li>
+                                <li><a href="#">Czwarty Produkt</a></li>
+                                <li><a href="#">Piąty Produkt</a></li>
+                                <li><a href="#">Szusty Produkt</a></li>
+                            </ol>
+                        </div>
+                        <div>
+                            <ol class="submenu">
+                                <li class="submenu-title">Title</li>
+                                <li><a href="#">Drugi Produkt</a></li>
+                                <li><a href="#">Trzeci Produkt</a></li>
+                                <li><a href="#">Czwarty Produkt</a></li>
+                                <li><a href="#">Piąty Produkt</a></li>
+                                <li><a href="#">Szusty Produkt</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" :class="{secondSlide: secondSlide}">Trendy</a></li>
+                <li><a href="#" :class="{secondSlide: secondSlide}">O firmie</a></li>
+                <li><a href="#" :class="{secondSlide: secondSlide}">Salony</a></li>
+                <li><a href="#" :class="{secondSlide: secondSlide}">Dystrybutarzy</a></li>
+                <li><a href="#" :class="{secondSlide: secondSlide}">Kontakt</a></li>
+            </ul>
+            <div id="socialNetworkContainer">
+                <div id="facebook" class="social-networks" :class="{secondSlide: secondSlide}">
+                    <a href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 21 46" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                             xmlns:serif="http://www.serif.com/"
+                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path  d="M0,14.502L2.578,14.502C4.48,14.502 4.253,14.792 4.286,12.859C4.318,11.279 4.318,9.668 4.416,8.088C4.576,3.899 7.863,0.483 12.085,0.193C14.727,0 17.402,0.064 20.078,0C20.625,0 20.755,0.257 20.755,0.774C20.755,2.964 20.723,5.123 20.755,7.282C20.788,7.928 20.497,8.088 19.918,8.088C18.564,8.056 17.178,8.056 15.792,8.056C14.922,7.928 14.116,8.539 13.956,9.41L13.956,9.893C13.956,11.183 13.987,12.439 13.956,13.696C13.956,14.341 14.149,14.566 14.826,14.566C16.502,14.533 18.242,14.533 19.949,14.533L20.853,14.533C20.917,14.727 20.917,14.92 20.917,15.115C20.724,17.435 20.498,19.755 20.304,22.076C20.241,22.591 20.014,22.624 19.596,22.624C18.05,22.624 16.47,22.688 14.891,22.624C14.15,22.591 13.957,22.849 13.988,23.558L13.988,43.797C13.988,45.087 13.988,45.087 12.733,45.087C10.283,45.087 7.835,45.054 5.384,45.119C4.547,45.119 4.288,44.861 4.288,44.023C4.32,37.287 4.32,30.552 4.32,23.784C4.32,22.624 4.32,22.624 3.129,22.624L0,22.624L0,14.502Z"
+          style="fill-rule:nonzero;"/>
+</svg>
+                    </a>
+                </div>
+                <div id="twitter" class="social-networks" :class="{secondSlide: secondSlide}">
+                    <a href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 56 46" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                             xmlns:serif="http://www.serif.com/"
+                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path  d="M55.335,5.408C54.206,5.795 53.24,6.183 52.241,6.472C51.21,6.73 50.147,6.924 49.116,7.118L49.083,6.989C50.178,6.28 51.146,5.409 51.952,4.379C52.788,3.347 53.434,2.155 53.821,0.865L53.273,1.156C51.339,2.219 49.245,3.026 47.085,3.509C46.795,3.605 46.472,3.509 46.248,3.25C44.508,1.479 42.22,0.381 39.738,0.124C35.452,-0.519 31.198,1.415 28.845,5.056C27.395,7.086 26.718,9.536 26.943,12.018C26.976,12.661 27.071,13.307 27.136,13.984C17.984,13.501 9.475,9.181 3.676,2.124C2.451,4.215 1.934,6.666 2.224,9.082C2.578,12.37 4.351,15.334 7.058,17.204C5.318,17.171 3.61,16.721 2.063,15.882C1.999,18.525 2.9,21.07 4.545,23.133C6.22,25.196 8.508,26.613 11.119,27.161C9.443,27.613 7.703,27.678 5.994,27.388C7.54,31.995 11.796,35.154 16.63,35.347C11.893,38.989 5.963,40.729 0,40.117C1.29,40.891 2.578,41.633 3.933,42.276C7.799,44.016 11.956,44.984 16.179,45.113C20.82,45.305 25.429,44.532 29.716,42.823C35.194,40.664 39.931,36.959 43.314,32.124C47.665,26.226 49.922,19.04 49.729,11.692C49.696,11.37 49.858,11.08 50.114,10.918C51.598,9.822 52.918,8.533 54.08,7.083C54.498,6.601 54.884,6.021 55.335,5.408Z"
+          style="fill-rule:nonzero;"/>
+</svg>
+                    </a>
+                </div>
+                <div id="youtube" class="social-networks" :class="{secondSlide: secondSlide}">
+                    <a href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 52 39" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                             xmlns:serif="http://www.serif.com/"
+                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g>
+        <path d="M26.003,0C26.026,0 36.923,0.001 44.189,0.564C45.205,0.688 47.42,0.702 49.397,2.909C50.956,4.593 51.464,8.416 51.464,8.416C51.464,8.416 51.984,12.902 51.984,17.39L51.984,21.596C51.984,26.084 51.464,30.57 51.464,30.57C51.464,30.57 50.956,34.393 49.397,36.073C47.42,38.279 45.205,38.292 44.189,38.422C36.915,38.981 25.992,39 25.992,39C25.992,39 12.475,38.868 8.317,38.444C7.16,38.214 4.565,38.281 2.585,36.073C1.027,34.392 0.52,30.571 0.52,30.571C0.52,30.571 0,26.085 0,21.595L0,17.39C0,12.902 0.52,8.416 0.52,8.416C0.52,8.416 1.028,4.593 2.584,2.909C4.564,0.702 6.778,0.688 7.793,0.564C15.059,0.001 25.955,0 25.978,0L26.003,0ZM19.5,9.75L19.5,29.25L35.75,19.5L19.5,9.75Z"
+              style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+                    </a>
+                </div>
+                <div id="instagram" class="social-networks" :class="{secondSlide: secondSlide}">
+                    <a href="#">
+                        <svg width="100%" height="100%" viewBox="0 0 44 44" version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                             xmlns:serif="http://www.serif.com/"
+                             style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path  d="M32.839,0L10.667,0C4.769,0 0,4.769 0,10.667L0,32.84C0,38.737 4.769,43.507 10.667,43.507L32.839,43.507C38.737,43.507 43.506,38.738 43.506,32.84L43.506,10.667C43.507,4.769 38.737,0 32.839,0ZM22.139,32.259C16.145,32.259 11.28,27.393 11.28,21.398C11.28,15.373 16.145,10.505 22.139,10.505C28.166,10.505 33.033,15.373 33.033,21.398C33.033,27.393 28.166,32.259 22.139,32.259ZM35.136,12.979C33.356,12.979 31.913,11.536 31.913,9.756C31.913,7.977 33.356,6.534 35.136,6.534C36.915,6.534 38.358,7.977 38.358,9.756C38.358,11.536 36.915,12.979 35.136,12.979Z"/>
+</svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="container">
+        <header>
+            <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="carouselIndicatorsOl">
+                    <li data-target="#carouselIndicators" data-slide-to="0"
+                        class="active slide-buttons animated pulse delay-2s"></li>
+                    <li data-target="#carouselIndicators" data-slide-to="1"
+                        class="slide-buttons animated pulse delay-2s"></li>
+                </ol>
+                <div class="carousel-inner" id="carousel">
+                    <div class="carousel-item active" id="firstSlide">
+                        <div class="slide-container">
+                            <div class="counter-container">
+                                <span class="line"></span>
+                                <span>o1.</span>
+                            </div>
+                            <div class="content">
+                                <span>Bez kompromisu.</span> <br>
+                                <span>Idealnie takie jak lubisz.</span> <br>
+                                <span class="slide-keune">KEUNE <b>DESIGN</b></span>
+                            </div>
+                            <div class="keune-button-container">
+                                <hr class="hr-carousel">
+                                <a href="#">
+                                    <div class="keune-button">
+                                        <span class="arrow  arrow-keune-button"></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" ref="secondSlide" id="secondSlide">
+                        <div class="slide-container">
+                            <div class="counter-container">
+                                <span class="line"></span>
+                                <span>o1.</span>
+                            </div>
+                            <div class="content" >
+                                <span>Bez kompromisu.</span> <br>
+                                <span>Idealnie takie jak lubisz.</span> <br>
+                                <span class="slide-keune">KEUNE <b>DESIGN</b></span>
+                            </div>
+                            <div class="keune-button-container">
+                                <hr class="hr-carousel">
+                                <a href="#">
+                                    <div class="keune-button">
+                                        <span class="arrow arrow-keune-button"></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="carouselArrowsContainer">
+                    <a id="carouselPrev" href="#carouselIndicators" role="button" data-slide="prev">
+                        <span class="arrow arrow-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a id="carouselNext" href="#carouselIndicators" role="button" data-slide="next">
+                        <span class="arrow arrow-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="marki-keune-container animated fadeIn delay-1s">
+                <div class="counter-container">
+                    <span class="line"></span>
+                    <span>o2.</span>
+                </div>
+                <div>
+                    <span>MARKI</span> <br>
+                    <span>KEUNE</span>
+                </div>
+            </div>
+        </section>
+        <section v-for="mark in marks">
+            <div :class="{'large-keune-container': mark.size === 1,  'small-keune-container': mark.size === 0}">
+                <div class="title-container animated fadeInDown delay-2s">
+                    <span>KEUNE</span> <br>
+                    <span>{{ mark.title }}</span>
+                </div>
+                <a href="#">
+                    <div class="open-container">
+                        <hr>
+                        <span class="open-title">ODKRYJ SERIE</span>
+                        <div>
+                            <span class="arrow arrow-keune-button"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </section>
+</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
